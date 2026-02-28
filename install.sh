@@ -8,6 +8,7 @@ echo ""
 # 创建目标目录
 mkdir -p ~/.claude/plugins/custom/github-v2box/.claude-plugin
 mkdir -p ~/.claude/plugins/custom/github-v2box/skills/github-v2box-auto
+mkdir -p ~/.claude/plugins/custom/github-v2box/hooks
 
 # 复制配置文件
 echo "复制 plugin.json..."
@@ -16,6 +17,10 @@ cp ./plugin.json ~/.claude/plugins/custom/github-v2box/.claude-plugin/plugin.jso
 # 复制技能文件
 echo "复制 SKILL.md..."
 cp ./skills/github-v2box-auto/SKILL.md ~/.claude/plugins/custom/github-v2box/skills/github-v2box-auto/SKILL.md
+
+# 复制 hooks 文件
+echo "复制 hooks..."
+cp -r ./hooks/* ~/.claude/plugins/custom/github-v2box/hooks/
 
 # 验证
 echo ""
@@ -31,6 +36,20 @@ if [ -f ~/.claude/plugins/custom/github-v2box/skills/github-v2box-auto/SKILL.md 
     echo "✓ SKILL.md 已安装"
 else
     echo "✗ SKILL.md 安装失败"
+    exit 1
+fi
+
+if [ -f ~/.claude/plugins/custom/github-v2box/hooks/hooks.json ]; then
+    echo "✓ hooks.json 已安装"
+else
+    echo "✗ hooks.json 安装失败"
+    exit 1
+fi
+
+if [ -f ~/.claude/plugins/custom/github-v2box/hooks/pre_tool_use.py ]; then
+    echo "✓ pre_tool_use.py 已安装"
+else
+    echo "✗ pre_tool_use.py 安装失败"
     exit 1
 fi
 
