@@ -37,5 +37,6 @@ version: 1.0.0
 ## 注意事项
 
 - V2Box 应用路径: `/Applications/V2Box.app`
-- 点击位置固定: 屏幕坐标 (482, 678)
-- 脚本路径: `/Users/rhuang/workspace/v2box-auto.py`
+- 点击位置: 脚本会动态获取窗口位置，基于 **相对偏移** X+129, Y+540 计算实际点击位置
+- 脚本路径: `/Users/rhuang/workspace/github-v2box-auto/scripts/v2box-auto.py`
+- 如需调整点击位置，可修改脚本中的 `X_OFFSET` 和 `Y_OFFSET` 参数
