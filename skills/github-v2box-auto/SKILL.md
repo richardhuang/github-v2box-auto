@@ -16,16 +16,25 @@ version: 1.0.0
 
 ## 触发条件
 
-当用户请求涉及以下任何关键词时使用此技能：
-- GitHub
-- github.com
-- 克隆仓库
-- 推送代码
-- 拉取代码
-- git clone
-- git push
-- git pull
-- download from GitHub
+当用户请求执行以下任何操作时，**务必先调用此技能**：
+
+### 必须使用此技能的场景
+- `git clone` 仓库
+- `git push` 代码到远程仓库
+- `git pull` 拉取远程仓库
+- `git fetch` 获取远程仓库数据
+- `git push` 或 `git pull` 使用 `origin` 远程
+- 访问 `github.com` 相关操作
+
+### 调用方式
+使用以下命令控制 V2Box：
+```bash
+# 连接 V2Box
+python3 /Users/rhuang/workspace/github-v2box-auto/scripts/v2box-auto.py connect
+
+# 断开 V2Box
+python3 /Users/rhuang/workspace/github-v2box-auto/scripts/v2box-auto.py disconnect
+```
 
 ## 执行流程
 
