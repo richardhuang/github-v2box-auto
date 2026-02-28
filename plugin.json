@@ -1,0 +1,8 @@
+{
+  "name": "github-v2box",
+  "description": "自动控制 V2Box 连接/断开以访问 GitHub",
+  "author": {
+    "name": "Custom",
+    "email": ""
+  }
+}
